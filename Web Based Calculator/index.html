@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Calculator</title>
+<style>
+
+body {
+       background-image:url('Images/Calc.png');
+       background-attachment:fixed;
+       background-size:cover;
+	   background-repeat: no-repeat;
+     }
+
+p { 
+     text-transform:uppercase;
+  }
+
+#time { 
+       color:#fff;
+       font-size:25px;
+      }
+
+table {  
+       border:8px solid #BA8B02; 
+       background:linear-gradient(to right, #200122, #6f0000);
+       color:#fff;
+       width:100%;
+       font-family:Consolas;
+       font-size:28px;
+       border-collapse:collapse;
+       text-align:center;
+      }
+
+form { 
+       width:100%;
+     }
+
+input[type=text] { 
+                    border:4px solid rgb(128,128,128);
+	                width:33.45%;
+                    height:20px;
+	                padding:8px;
+	                transform:translate(-8px,0);
+                 }
+
+input[type=button] {  
+                     border:1px solid #000;
+                     background-color:#fff; 
+					 width:11%;
+					 font-size:20px;
+				     height:55px;
+                     color:#000; 
+                     transition:background-color 0.3s, color 0.3s, font-size 0.3s;
+                   }
+
+input[type=button]:hover { 
+                           background-color:#000;
+                           color:#fff;
+						   font-size:30px;
+                         }
+
+#op { 
+      width:7.98%;
+    }
+
+</style>
+
+<script src="JS/m17.js"></script>
+</head>
+<body>
+  <form name="Calc">
+   <table>
+    <tr>
+     <td><p>calculator <br><span id="time"></span></p>
+     <input type="text" name="field"><br><br></td>
+    </tr>
+    <tr>
+     <td>
+     <input type="button" value="1" onclick="Calc.field.value += '1'">
+     <input type="button" value="2" onclick="Calc.field.value += '2'">
+     <input type="button" value="3" onclick="Calc.field.value += '3'">
+     <br>
+     <input type="button" value="4" onclick="Calc.field.value += '4'">
+     <input type="button" value="5" onclick="Calc.field.value += '5'">
+     <input type="button" value="6" onclick="Calc.field.value += '6'">
+     <br>
+     <input type="button" value="7" onclick="Calc.field.value += '7'">
+     <input type="button" value="8" onclick="Calc.field.value += '8'">
+     <input type="button" value="9" onclick="Calc.field.value += '9'">
+     <br>
+     <input type="button" value="c" onclick="Calc.field.value = ''">
+     <input type="button" value="0" onclick="Calc.field.value += '0'">
+     <input type="button" value="=" onclick="Calc.field.value = eval(Calc.field.value)">
+     <br>
+     <input id="op" type="button" value="+" onclick="Calc.field.value += '+'">
+     <input id="op" type="button" value="-" onclick="Calc.field.value += '-'">
+     <input id="op" type="button" value="*" onclick="Calc.field.value += '*'">
+     <input id="op" type="button" value="/" onclick="Calc.field.value += '/'">
+     <br>
+     <input id="op" type="button" value="ln" onclick="Log();">
+     <input id="op" type="button" value="(" onclick="Calc.field.value += '('">
+     <input id="op" type="button" value=")" onclick="Calc.field.value += ')'">
+     <input id="op" type="button" value="del" onclick="Del();">
+     <br>
+     <input id="op" type="button" value="sin" onclick="Sin();">
+     <input id="op" type="button" value="cos" onclick="Cos();">
+     <input id="op" type="button" value="tan" onclick="Tan();">
+     <input id="op" type="button" value="pie" onclick="Calc.field.value = '3.141592653589'">
+     <br><br>
+     </td>
+    </tr>
+   </table>
+  </form>
+</body>
+</html>
